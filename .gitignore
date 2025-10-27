@@ -1,0 +1,41 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build artifacts
+dist/
+coverage/
+.cache/
+.tmp/
+.temp/
+*.tsbuildinfo
+
+# Environment files (do not commit secrets)
+.env
+.env.*
+!.env.example
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Logs
+logs/
+*.log
+logs/**/*.log
+
+# Binary assets not for versioning
+*.pdf
+*.zip
+*.tar
+*.tar.gz
+
+# Misc
+uploads/
+storage/

@@ -1,0 +1,183 @@
+/g10D  PITCH DECK 3 CLIPEFY
+
+Clipefy 3 A Revolução da 
+Criação de Vídeos Curto com 
+Inteligência Artificial
+"Transformamos vídeos longos em 
+conteúdo viral, automaticamente."
+
+O Problema
+Criadores e agências enfrentam grandes dores:
+ó  Tempo Perdido
+Perdem horas editando e cortando vídeos manualmente
+o  Dificuldade de Adaptação
+Dificuldade em adaptar conteúdo para TikTok, YouTube Shorts e Reels
+/gCEA  Falta de Padronização
+Falta de padronização e consistência nas publicações
+/g66B  Escalabilidade
+Dificuldade em escalar produção e alcançar audiência
+
+A Solução
+Clipefy automatiza completamente o processo:
+01
+Conexão
+O usuário conecta o canal (YouTube, TikTok, Instagram etc.)
+02
+Análise IA
+A IA analisa os vídeos e identifica os melhores momentos
+03
+Automação
+Gera cortes, aplica legendas, formata para cada rede e publica automaticamente
+04
+Monitoramento
+O painel mostra o desempenho e engajamento de cada vídeo
+/g63E  Resultado: Crescimento orgânico e viralização sem esforço humano.
+
+Mercado e Oportunidade
+/g106  Mercado Global de 
+Criadores de Conteúdo:
++200 
+milhões
+de criadores ativos no mundo.
+/g66A  Tamanho de mercado em 
+expansão:
+Ferramentas de automação de vídeo: US$ 5,2 
+bilhões até 2027
+Foco inicial: Brasil + América Latina 
+(crescimento 80%/ano em vídeos curtos)
+/g110  Nichos-alvo:
+Criadores 
+independentes
+Agências de 
+marketing digital
+Clipadores 
+profissionais
+
+O Produto
+Funcionalidades principais:
+IA de corte inteligente
+Detecção de emoção, ritmo e fala
+Legendas automáticas
+Em português
+Formatação multiplataforma
+Reels, Shorts, TikTok
+Agendamento automático
+Postagem automática
+Painel de métricas
+Performance detalhada
+Monetização
+Para clipadores
+
+Modelo de Negócio
+Assinaturas mensais (SaaS):
+Plano Público Recursos Preço sugerido
+Starter Criadores individuais 20 vídeos/mês R$ 49
+Pro Influenciadores e pequenas 
+agências
+100 vídeos/mês R$ 149
+Agency Agências e clipadores 500 vídeos/mês R$ 349
+/g655  Pagamentos via cartão, Pix e PayPal. /g6A2  Renovação automática. /g66A  Receita recorrente previsível (MRR).
+
+Diferenciais Competitivos
+Diferencial Concorrentes Clipefy
+IA Automática Sim
+' 
+Postagem Automática Parcial '  Completa
+Idioma PT-BR o ' 
+Monetização para usuários o ' 
+Foco em Agências o ' 
+Painel Analítico Avançado Parcial ' 
+/g818  Única plataforma que combina IA, automação total e monetização em português.
+
+Arquitetura e T ecnologia
+Infraestrutura moderna e escalável:
+Backend
+NestJS/FastAPI
+Pipelines de IA
+Whisper + PyTorch + FFmpeg
+Banco
+PostgreSQL + Redis
+Armazenamento
+AWS S3 / CloudFront
+Deploy
+Docker + Kubernetes (ECS)
+Integrações
+APIs YouTube, TikTok, Meta Graph
+/g63E  Escalabilidade horizontal e modularidade via microserviços.
+
+Roadmap T écnico
+1MVP
+033 meses
+Upload, corte, legenda, postagem automática
+2 Analytics
+335 meses
+Painel com métricas e relatórios
+3Monetização
+537 meses
+Sistema para clipadores/agências
+4 IA Avançada
+739 meses
+Personalização por usuário
+5Escala
+9312 meses
+Lançamento internacional
+
+Projeções Financeiras (exemplo)
+0
+5,000,000
+10,000,000
+15,000,000
+2025 2026 2027
+Usuários Pagantes Receita Anual EBITDA %
+/g652  Alto potencial de margem com baixo custo operacional (infra + IA).
+
+Estratégia de Go-To-Market
+Parcerias Estratégicas
+Parcerias com influenciadores e criadores renomados
+Prova Social
+Prova social com vídeos virais feitos pela plataforma
+Programa de Afiliados
+Programa de afiliados e monetização por engajamento
+Marketing Digital
+Marketing digital (Google Ads, Meta Ads e TikTok Ads)
+Campanhas de PR
+Campanhas de PR com destaque em tecnologia e IA
+
+Time e Execução
+Sócios Fundadores
+ý  William Alves da Silva
+Sócio - Especialista em Qualidade, IA e Arquitetura de Software
+ý  Pedro Martins
+Sócio - Estrategista e Marketing Digital
+ý  Suzana Maciel
+Sócio - DevSecOps e infraestrutra
+þ  Equipe Técnica Inicial:
+Tech Lead (IA & Backend)
+DevOps Cloud
+UI/UX Designer
+AI Engineer
+Marketing Growth
+
+Oportunidade de Investimento
+R$ 1,5 
+milhão
+/g110  Captação inicial
+Objetivo do aporte:
+Desenvolvimento completo do MVP (infra + 
+IA)
+Campanha de lançamento e aquisição de 
+usuários
+Contratação de equipe técnica
+Custos operacionais e marketing por 12 
+meses
+/g66A  Retorno esperado: Break-even em 18 meses, com crescimento projetado de 10x 
+ROI em 3 anos.
+
+Clipefy 3 O futuro dos vídeos 
+virais começa aqui.
+Invista em uma 
+plataforma
+que democratiza o crescimento digital 
+e transforma inteligência artificial em 
+impacto social e econômico real.
+/g818 
