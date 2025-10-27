@@ -6,6 +6,7 @@ import { PublishModule } from './publish/publish.module';
 import { QueueModule } from './queue/queue.module';
 import { AuthModule } from './auth/auth.module';
 import { DatabaseModule } from './database/database.module';
+import { UploadModule } from './upload/upload.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { DatabaseModule } from './database/database.module';
     PublishModule,
     QueueModule,
     AuthModule,
+    UploadModule,
   ],
 })
 export class AppModule {}

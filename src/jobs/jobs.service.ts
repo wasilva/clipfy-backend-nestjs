@@ -108,6 +108,28 @@ export class JobsService {
     }
   }
 
+  async createUploadedJob(source_url: string): Promise<JobStatusResponse> {
+    const entity = this.jobsRepo.create({ sourceUrl: source_url, status: 'uploaded' as any });
+    const saved = await this.jobsRepo.save(entity);
+    this.JOBS.set(saved.id, { status: 'uploaded' as any, source_url });
+    return { job_id: saved.id, status: 'uploaded' as any };
+  }
+
+  async trigger(job_id: string): Promise<JobStatusResponse | undefined> {
+    const job = await this.jobsRepo.findOne({ where: { id: job_id } });
+    if (!job) return undefined;
+    job.status = 'queued' as any;
+    await this.jobsRepo.save(job);
+    const mem = this.JOBS.get(job_id) || { status: 'queued' as any, source_url: job.sourceUrl } as any;
+    this.JOBS.set(job_id, mem);
+    if (this.useQueue) {
+      await this.queue.addIngestJob({ source_url: job.sourceUrl, job_id });
+    } else {
+      setTimeout(() => this.process(job_id, job.sourceUrl), 50);
+    }
+    return { job_id, status: 'queued' };
+  }
+
   private runProcessingPipeline(source_url: string): Clip[] {
     const windows = this.detectHighlights(source_url);
     const clips: Clip[] = windows.map(([start, end]) => ({
