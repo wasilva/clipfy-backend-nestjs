@@ -1,8 +1,9 @@
-import { Controller, Post, UseInterceptors, UploadedFile, BadRequestException, Query, Body, Param } from '@nestjs/common';
+import { Controller, Post, UseInterceptors, UploadedFile, BadRequestException, Query, UseGuards, Req } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { memoryStorage } from 'multer';
 import { UploadService } from './upload.service';
 import { ApiBody, ApiConsumes, ApiOkResponse, ApiQuery, ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 class UploadResponseDto {
   job_id!: string;
@@ -17,6 +18,7 @@ export class UploadController {
   constructor(private readonly upload: UploadService) {}
 
   @Post()
+  @UseGuards(JwtAuthGuard)
   @ApiConsumes('multipart/form-data')
   @ApiQuery({ name: 'defer', required: false, description: 'If true, do not start processing automatically' })
   @ApiBody({ schema: { type: 'object', properties: { file: { type: 'string', format: 'binary' } } } })
@@ -27,9 +29,9 @@ export class UploadController {
       limits: { fileSize: 1024 * 1024 * 1024 }, // 1GB
     }),
   )
-  async uploadFile(@UploadedFile() file: Express.Multer.File, @Query('defer') defer?: string): Promise<UploadResponseDto> {
+  async uploadFile(@UploadedFile() file: Express.Multer.File, @Query('defer') defer: string | undefined, @Req() req: any): Promise<UploadResponseDto> {
     if (!file) throw new BadRequestException('file is required');
-    const result = await this.upload.handleUpload(file, defer === 'true');
+    const result = await this.upload.handleUpload(file, defer === 'true', req.user?.id);
     return result as UploadResponseDto;
   }
 }

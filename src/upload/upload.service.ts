@@ -7,9 +7,15 @@ import { randomUUID } from 'crypto';
 export class UploadService {
   constructor(private readonly s3: S3StorageService, private readonly jobs: JobsService) {}
 
-  async handleUpload(file: Express.Multer.File, defer: boolean) {
+  async handleUpload(file: Express.Multer.File, defer: boolean, userId?: string) {
     const ext = (file.originalname.split('.').pop() || 'bin').toLowerCase();
-    const key = `raw/${randomUUID()}.${ext}`;
+    const safeName = file.originalname.replace(/[^a-zA-Z0-9_.-]+/g, '_').slice(0, 80);
+    const key = `raw/${safeName.replace(/\s+/g, '_').replace(/^_+/, '')}_${randomUUID().slice(0,8)}.${ext}`;
+    const maxMb = Number(process.env.MAX_UPLOAD_SIZE_MB || '512');
+    const maxBytes = maxMb * 1024 * 1024;
+    if (file.size && file.size > maxBytes) {
+      throw new BadRequestException(`file too large: limit ${maxMb}MB`);
+    }
     if (!file.buffer || file.buffer.length === 0) {
       throw new BadRequestException('empty or invalid file');
     }
@@ -25,7 +31,7 @@ export class UploadService {
     }
 
     if (defer) {
-      const job = await this.jobs.createUploadedJob(url);
+      const job = await this.jobs.createUploadedJob(url, userId);
       return { job_id: job.job_id, status: 'uploaded', url, key };
     }
 
