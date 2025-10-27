@@ -37,4 +37,13 @@ export class JobsController {
     if (!clips) throw new NotFoundException('clips not found or job not completed');
     return clips as any;
   }
+
+  @Post('jobs/:jobId/process')
+  @ApiOperation({ summary: 'Trigger processing for an uploaded job' })
+  @ApiOkResponse({ type: JobStatusResponseDto })
+  async process(@Param('jobId') jobId: string): Promise<JobStatusResponseDto> {
+    const st = await this.jobs.trigger(jobId);
+    if (!st) throw new NotFoundException('job not found');
+    return st as any;
+  }
 }
