@@ -108,8 +108,8 @@ export class JobsService {
     }
   }
 
-  async createUploadedJob(source_url: string): Promise<JobStatusResponse> {
-    const entity = this.jobsRepo.create({ sourceUrl: source_url, status: 'uploaded' as any });
+  async createUploadedJob(source_url: string, userId?: string): Promise<JobStatusResponse> {
+    const entity = this.jobsRepo.create({ sourceUrl: source_url, status: 'uploaded' as any, user: userId ? ({ id: userId } as any) : undefined });
     const saved = await this.jobsRepo.save(entity);
     this.JOBS.set(saved.id, { status: 'uploaded' as any, source_url });
     return { job_id: saved.id, status: 'uploaded' as any };

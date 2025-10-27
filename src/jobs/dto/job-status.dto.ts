@@ -4,10 +4,9 @@ export class JobStatusResponseDto {
   @ApiProperty()
   job_id!: string;
 
-  @ApiProperty({ enum: ['queued', 'processing', 'completed', 'failed'] })
-  status!: 'queued' | 'processing' | 'completed' | 'failed';
+  @ApiProperty({ enum: ['uploaded', 'queued', 'processing', 'completed', 'failed'] })
+  status!: 'uploaded' | 'queued' | 'processing' | 'completed' | 'failed';
 
   @ApiPropertyOptional()
   error?: string;
 }
-
